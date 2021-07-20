@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <meta charset="utf-8">
+        <title>Coming Soon Page Design</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+   <script src="PI.JS"></script>
+    </head>
+    <body>
+        <header>
+            <div class="Soon">
+            <p>LAUKIK</p>
+            <h1>NEW BRAND LAUNCHING SOON</h1>
+            <hr>
+            <p id="launch"></p>
+            </div>
+        </header>
+
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+              <div class="close-btn" onclick="togglePopup()">×</div>
+              <h2>THANK YOU FOR YOUR INTEREST!</h2>
+              <p style="font-size: 25px; color: #000;">NOTE: This brand and website is just made for testing purpose only...!!!</p>
+            </div>
+          </div>
+           
+          <button onclick="togglePopup()">click here</button>
+
+
+
+    </body>
+    
+    
+    
+    <script>
+    
+        var countDownDate = new Date ("july 27, 2021 00:00:00").getTime();
+
+        var x = setInterval(function() {
+
+        var now = new Date ().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor (distance /(1000*60*60*24));
+         var hours = Math.floor ((distance % (1000*60*60*24)) / (1000*60*60));
+          var minutes = Math.floor ((distance % (1000*60*60)) / (1000*60));
+           var seconds = Math.floor ((distance % (1000*60)) / 1000);
+
+document.getElementById("launch").innerHTML=days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    
+    if (distance < 0) {
+    clearInterval(x);
+    document.getElementById('launch').innerHTML="EXPIRED";
+    }
+            
+}, 1000);
+    
+    </script>
+</hmtl>
